@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test18.html</title>
+  <title>test18_3.html</title>
   <script>
     'use strict';
     function fCheck() {
-      let gender = myform.gender.value;
+      let gender;
+      if(document.getElementsByName("gender")[0].checked) gender = "남";
+      if(document.getElementsByName("gender")[1].checked) gender = "여";
 
       // demo.innerText = gender;
       if(gender == '남') {

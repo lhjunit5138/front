@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단1</title>
+    <script>
+        
+        var gugu = prompt("원하는 시작하는 구구단을 입력해주세요");
+        var guguend = prompt("원하는 끝나는 구구단을 입력해주세요");
+        // if(!isNaN(gugu)){  // isNaN을 통하여 숫자인지 아닌지를 판별.
+        //     for(var i = 1; i<10; i++){ 
+        //         document.write(gugu+"x"+i+"="+(i*gugu)+"</br>"); 
+        //     }
+        // }else{ 
+        //     alert("숫자가 아닙니다.") 
+        // }
+
+        var temp;
+
+        if (gugu > guguend) {
+            temp = gugu;
+            gugu = guguend;
+            guguend = temp;
+        }
+
+        for (; gugu <= guguend; gugu++) {
+            for(var i = 1; i<10; i++){ 
+                document.write(gugu+"x"+i+"="+(i*gugu)+"</br>"); 
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+<body>
+    <h2>구구단 출력</h2>
+    <p>시작단과 끝단을 입력후 버튼을 누르세요.</p>
+</body>
+</html>
