@@ -22,8 +22,7 @@
     }
 
     function clockStart() {
-      clock();
-      statusTime = setInterval(clock, 1000);
+      statusTime = setInterval(clock, 1000);  // 1초후에 지속적으로 clock()함수를 호출한다.(즉, clearInterval명령이 오기전까지 1초마다 계속해서 같은 함수를 호출한다.)
     }
 
     function clockStop() {
@@ -35,6 +34,10 @@
 <p><br/></p>
 <div class="container">
   <h2>인터넷 시계</h2>
+  <p>
+    setInterval함수를 사용하게되면 지정시간후 바로 시간처리함수를 호출하게하면 된다.<br/>
+    즉, setInterval함수는 시정시간이 경과하면 지속적으로 계속해서 지정된 함수를 호출하기에 변경된 시간이 반영되게 된다.
+  </p>
   <p>
     <input type="button" value="동작" onclick="clockStart()" class="btn btn-secondary"/>
     <input type="button" value="정지" onclick="clockStop()" class="btn btn-secondary"/>

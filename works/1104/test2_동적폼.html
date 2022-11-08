@@ -37,14 +37,26 @@
     */
 
     // 4.클릭할때마다 입력폼 추가하기('지우기'버튼추가) : 각 TextField마다 고유한 id를 지정한다.
-    // function inputBox() {
-    //   idx++;
-    //   newText += '<div id="proTxt'+idx+'">';
-    //     newText += idx + '.<input type="text" name="product" id="product'+idx+'" /> &nbsp;';
-    //     newText += "<input type='button' value='"+idx+".삭제' onclick='deleteBox("+idx+")' /><br/>";
-    //     newText += '</div>';
-    //   demo.innerHTML = newText;
-    // }
+    /*
+    function inputBox() {
+      idx++;
+      newText += '<div id="proTxt'+idx+'">';
+        newText += idx + '.<input type="text" name="product" id="product'+idx+'" /> &nbsp;';
+        newText += "<input type='button' value='"+idx+".삭제' onclick='deleteBox("+idx+")' /><br/>";
+        newText += '</div>';
+      demo.innerHTML = newText;
+    }
+    */
+
+    // 5.클릭할때마다 입력폼 추가하기('지우기'버튼추가) : 각 TextField마다 고유한 id를 지정한다.(삭제후 추가필드에 대한 처리)
+    function inputBox() {
+      idx++;
+      newText = '<div id="proTxt'+idx+'">';
+      newText += idx + '.<input type="text" name="product" id="product'+idx+'" /> &nbsp;';
+      newText += "<input type='button' value='"+idx+".삭제' onclick='deleteBox("+idx+")' /><br/>";
+      newText += '</div>';
+      demo.innerHTML += newText;
+    }
 
     // 삭제버튼 클릭시 동적텍스트박스 삭제하기
     function deleteBox(idx) {
@@ -53,16 +65,6 @@
       item.parentNode.removeChild(item);
     }
 
-    // 5.클릭할때마다 입력폼 추가하기('지우기'버튼추가) : 각 TextField마다 고유한 id를 지정한다.(삭제 후 추가 필드에 대한 처리)
-    function inputBox() {
-        idx++;
-        newText = '<div id="proTxt'+idx+'">';
-        newText += idx + '.<input type="text" name="product" id="product'+idx+'" /> &nbsp;';
-        newText += "<input type='button' value='"+idx+".삭제' onclick='deleteBox("+idx+")' /><br/>";
-        newText += '</div>';
-        demo.innerHTML += newText;
-    }
-    
     function reloadCheck() {
       idx = "";
       location.reload();
@@ -73,7 +75,7 @@
   <h2>입력창 추가(동적폼)</h2>
   <form name="myform">
     <p>
-      <input type="button" value="입력창추가" onclick="inputBox()"/>
+      <input type="button" value="입력창추가" onclick="inputBox()" size="1" />
       <input type="button" value="입력창모두제거" onclick="reloadCheck()"/>
     </p>
     <div id="demo"></div>
